@@ -22,3 +22,5 @@ application = ProtocolTypeRouter({
       youDownloadapp.routing.websocket_urlpatterns
     ),
 })
+
+app = application
