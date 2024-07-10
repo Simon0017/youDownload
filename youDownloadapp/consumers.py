@@ -83,7 +83,7 @@ class ProgressConsumer(WebsocketConsumer):
 
                 # Download the video and measure the actual time taken
                 start_time = time.time()
-                stream.download(output_path='C:/Users/wekes/Downloads')
+                stream.download()
                 end_time = time.time()
 
                 actual_time = end_time - start_time
