@@ -3,6 +3,7 @@ import pytube
 import speedtest
 import time
 from channels.generic.websocket import WebsocketConsumer
+from django.conf import settings
 
 
 class ProgressConsumer(WebsocketConsumer):
@@ -18,6 +19,7 @@ class ProgressConsumer(WebsocketConsumer):
     def receive(self, text_data=None, bytes_data=None):
         text_data_json = json.loads(text_data)
         url = text_data_json.get('url')
+        print(url)
 
         if url:
             try:
@@ -102,6 +104,7 @@ class ProgressConsumer(WebsocketConsumer):
                     'type': 'error',
                     'message': str(e),
                 }))
+                print(f"Error occured : {e}")
 
     def size(self, event):
         self.send(text_data=json.dumps(event))
