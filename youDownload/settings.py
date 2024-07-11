@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-ASGI_APPLICATION = 'youDownload.asgi.application'
+ASGI_APPLICATION = 'youDownload.asgi.app'
 
 # Set the channel layer
 CHANNEL_LAYERS = {
